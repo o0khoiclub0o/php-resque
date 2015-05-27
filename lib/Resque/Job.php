@@ -52,11 +52,11 @@ class Resque_Job
 	 */
 	public static function create($queue, $class, $args = null, $monitor = false)
 	{
-		if($args !== null && !is_array($args)) {
-			throw new InvalidArgumentException(
-				'Supplied $args must be an array.'
-			);
-		}
+		// if($args !== null && !is_array($args)) {
+		// 	throw new InvalidArgumentException(
+		// 		'Supplied $args must be an array.'
+		// 	);
+		// }
 		$id = md5(uniqid('', true));
 		Resque::push($queue, array(
 			'class'	=> $class,
